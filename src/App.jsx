@@ -9,12 +9,14 @@ import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/country/:id" component={CountryData} />
-      </Switch>
-    </Router>
+    <div className="bg-gray-whitish dark:bg-gray-dark">
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/country/:id" component={CountryData} />
+        </Switch>
+      </Router>
+    </div>
   )
 }
