@@ -19,6 +19,6 @@ export function Header() {
   )
 }
 
-const Container = styled.div`
+const Container = styled.header`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
 `
