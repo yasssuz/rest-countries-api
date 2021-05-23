@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export function TopBar() {
   return (
     <div className="md:flex md:justify-between">
-      <InputBlock className="w-full h-12 mb-14">
+      <InputBlock className="w-full h-12 mb-14 md:mb-0">
         <input
           type="text"
           placeholder="Search for a country..."
