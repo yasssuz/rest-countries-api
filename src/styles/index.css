@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input:focus, button:focus, select:focus {
+  outline:  #ffce00 dashed 2px;
+}
