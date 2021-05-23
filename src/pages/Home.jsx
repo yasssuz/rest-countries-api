@@ -1,7 +1,9 @@
+import { TopBar } from "../components/home/_TopBar";
+
 export default function Home() {
   return (
-    <div className="flex justify-center">
-      <h1 className="">HELLLOOO</h1>
-    </div>
+    <main className="py-7 px-4">
+      <TopBar />
+    </main>
   )
 }
