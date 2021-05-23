@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export function TopBar() {
   return (
-    <div className="md:flex md:justify-between">
+    <section className="md:flex md:justify-between">
       <InputBlock className="w-full h-12 mb-14 md:mb-0">
         <input
           type="text"
@@ -20,7 +20,7 @@ export function TopBar() {
         <option className="text-sm" value="europe">Europe</option>
         <option className="text-sm" value="oceania">Oceania</option>
       </Select>
-    </div>
+    </section>
   )
 }
 
