@@ -4,6 +4,6 @@ export default function CountryData({ match }) {
   console.log(country)
 
   return (
-    <h1></h1>
+    <h1>{country}</h1>
   )
 }
