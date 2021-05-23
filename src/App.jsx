@@ -3,14 +3,16 @@ import {
   Switch,
   Route,
 } from "react-router-dom"
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { Header } from "./components/shared/_Header";
-import { ThemeProvider } from "./contexts/ThemeContext";
 import CountryData from "./pages/country/CountryData";
 import Home from "./pages/Home";
 
+const queryClient = new QueryClient()
+
 export default function App() {
   return (
-    <ThemeProvider>
+    <QueryClientProvider client={queryClient}>
       <div className="bg-gray-whitish dark:bg-gray-dark">
         <Router>
           <Header />
@@ -20,6 +22,6 @@ export default function App() {
           </Switch>
         </Router>
       </div>
-    </ThemeProvider>
+    </QueryClientProvider>
   )
 }
