@@ -1,5 +1,6 @@
-import { useQuery } from 'react-query'
 import styled from 'styled-components'
+import { getCountries } from '../../services/getCountries'
+
 import { CountriesEskeleton } from './_CountriesEskeleton'
 
 export function CountriesList() {
@@ -46,13 +47,3 @@ export function CountriesList() {
 const Item = styled.li`
   max-width: 290px;
 `
-
-function getCountries() {
-  return useQuery('countries', async () => {
-    const res = await fetch(`https://restcountries.eu/rest/v2/all`)
-    const data = await res.json()
-    const countries = data.slice(0, 8)
-
-    return countries
-  })
-}
