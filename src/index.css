@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html body { 
+  background: #F2F2F2;
+}
+
+html.dark body { 
+  background: #202C36;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+input:focus, button:focus, select:focus {
+  outline:  #ffce00 dashed 2px;
+}
