@@ -9,6 +9,10 @@ export default function CountryData({ match }) {
     return <h1>loading...</h1>
   }
 
+  if (isError) {
+    return <h1>Error</h1>
+  }
+
   console.log(data)
 
   return (
