@@ -33,7 +33,7 @@ export function CountriesList() {
                 <h2 className="dark:text-white text-lg font-extrabold mb-2">{country.name}</h2>
                 <span className="block mb-1 text-base">
                   <strong className="font-semibold">Population: </strong>
-                  {country.population}
+                  {country.population.toLocaleString('en')}
                 </span>
                 <span className="block mb-1 text-base">
                   <strong className="font-semibold">Region: </strong>
