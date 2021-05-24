@@ -17,15 +17,19 @@ export function CountriesList() {
 
   return (
     <section>
-      <ul className="grid gap-y-10 mt-8">
+      <List className="grid gap-y-10 md:gap-x-10 mt-8">
         {data.map(country => (
           <Item
             key={country.name}
             className="rounded-md w-full overflow-hidden bg-white dark:bg-gray-light mx-auto"
           >
             <Link to={`/country/${country.name}`}>
-              <img src={country.flag} alt={country.name} />
-              <div className="p-6 dark:text-white text-darkest">
+              <img
+                src={country.flag}
+                alt={country.name}
+                className="w-full h-52 object-cover md:h-56"
+              />
+              <div className="p-6 dark:text-white text-darkest flex flex-col justify-center">
                 <h2 className="dark:text-white text-lg font-extrabold mb-2">{country.name}</h2>
                 <span className="block mb-1 text-base">
                   <strong className="font-semibold">Population: </strong>
@@ -43,17 +47,29 @@ export function CountriesList() {
             </Link>
           </Item>
         ))}
-      </ul>
+      </List>
     </section>
   )
 }
 
 const Item = styled.li`
-  max-width: 300px;
+  max-width: 400px;
   transition: transform 0.2s ease, border 0.2s ease;
 
   &:hover {
     transform: scale(1.05);
     border: #ffce00 1px dashed;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: none;
+  }
+`
+
+const List = styled.ul`
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `
