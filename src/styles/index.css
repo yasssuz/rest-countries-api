@@ -12,6 +12,7 @@ html.dark body {
 
 body {
   min-height: 100vh;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 input:focus, button:focus, select:focus {
