@@ -1,7 +1,8 @@
 import { GetCountry } from "../../services/getCountry"
 import { GoBack } from "../../components/country/_GoBack"
+import { CountryData } from "../../components/country/_CountryData"
 
-export default function CountryData({ match }) {
+export default function Country({ match }) {
   const countryName = match.params.id
   const { isLoading, data, isError } = GetCountry(countryName)
 
@@ -18,6 +19,7 @@ export default function CountryData({ match }) {
   return (
     <div className="py-10 px-7">
       <GoBack />
+      <CountryData />
     </div>
   )
 }
