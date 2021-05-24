@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { getCountries } from '../../services/getCountries'
+import { GetCountries } from '../../services/getCountries'
 
 import { CountriesEskeleton } from './_CountriesEskeleton'
 
 export function CountriesList() {
-  const { isLoading, isError, data } = getCountries()
+  const { isLoading, isError, data } = GetCountries()
 
   if (isLoading) {
     return <CountriesEskeleton />
