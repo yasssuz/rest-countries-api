@@ -1,6 +1,7 @@
 import { GoBack } from "../../components/country/_GoBack"
 import { CountryData } from "../../components/country/_CountryData"
 import { GetCountry } from "../../services/getCountry"
+import { Borders } from "../../components/country/_Borders"
 
 export default function Country({ match }) {
   const countryName = match.params.id
@@ -18,6 +19,7 @@ export default function Country({ match }) {
     <div className="py-10 px-7">
       <GoBack />
       <CountryData country={data[0]} />
+      <Borders borders={data[0].borders} />
     </div>
   )
 }
