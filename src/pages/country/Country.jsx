@@ -1,9 +1,12 @@
-import { GoBack } from "../../components/country/_GoBack"
+import { LinkBtn } from "../../components/country/_LinkBtn"
 import { CountryData } from "../../components/country/_CountryData"
 import { GetCountry } from "../../services/getCountry"
 import { Borders } from "../../components/country/_Borders"
+import { useContext } from "react"
+import { ThemeContext } from "../../contexts/ThemeContext"
 
 export default function Country({ match }) {
+  const { darkTheme } = useContext(ThemeContext)
   const countryName = match.params.id
   const { isLoading, data, isError, isFetching } = GetCountry(countryName)
 
@@ -20,8 +23,25 @@ export default function Country({ match }) {
   }
 
   return (
-    <div className="py-10 px-7">
-      <GoBack />
+    <div className="py-10 px-7 md:py-14 md:px-12 lg:p-20">
+      <div className="w-28">
+        <LinkBtn link="/">
+          {darkTheme ? (
+            <img
+              src="/assets/white-arrow-left.svg"
+              alt="go back"
+              className="mr-2"
+            />
+          ) : (
+            <img
+              src="/assets/black-arrow-left.svg"
+              alt="go back"
+              className="mr-2"
+            />
+          )}
+          Back
+      </LinkBtn>
+      </div>
       <CountryData country={data[0]} />
       <Borders borders={data[0].borders} />
     </div>
