@@ -7,10 +7,13 @@ export function Borders(props) {
 
   borders.map(border => {
     bordersArr.push(border.padEnd(5, ' '))
+    return
   })
 
-
-  useEffect(() => bordersArr[0] !== undefined && setHaveBorders(true), [])
+  useEffect(
+    () => bordersArr[0] !== undefined && setHaveBorders(true)
+    , [bordersArr]
+  )
 
   return (
     <div className="mt-8">

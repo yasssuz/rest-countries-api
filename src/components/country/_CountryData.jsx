@@ -6,6 +6,7 @@ export function CountryData(props) {
 
   country.currencies.map(curr => {
     currencies.push(curr.code.padEnd(5, ' '))
+    return
   })
 
   return (
