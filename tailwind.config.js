@@ -14,6 +14,10 @@ module.exports = {
         whitish: '#F2F2F2',
         light: '#2B3844',
         dark: '#202C36'
+      },
+
+      skeleton: {
+        transparentDark: '#0000004c'
       }
     },
     extend: {},
