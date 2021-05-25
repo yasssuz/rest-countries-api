@@ -4,10 +4,7 @@ export function CountryData(props) {
   const { country } = props
   let currencies = []
 
-  country.currencies.map(curr => {
-    currencies.push(curr.code.padEnd(5, ' '))
-    return
-  })
+  country.currencies.map(curr => currencies.push(curr.code.padEnd(5, ' ')))
 
   return (
     <div className="mt-16">
