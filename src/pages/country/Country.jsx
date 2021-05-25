@@ -4,6 +4,7 @@ import { GetCountry } from "../../services/getCountry"
 import { Borders } from "../../components/country/_Borders"
 import { useContext } from "react"
 import { ThemeContext } from "../../contexts/ThemeContext"
+import { CountrySkeleton } from "../../skeletons/_CountrySkeleton"
 
 export default function Country({ match }) {
   const { darkTheme } = useContext(ThemeContext)
@@ -11,15 +12,15 @@ export default function Country({ match }) {
   const { isLoading, data, isError, isFetching } = GetCountry(countryName)
 
   if (isLoading) {
-    return <h1>loading...</h1>
+    return <CountrySkeleton />
   }
 
   if (isError) {
-    return <h1>Error</h1>
+    return <CountrySkeleton />
   }
 
   if (isFetching) {
-    return <h1>Fetching</h1>
+    return <CountrySkeleton />
   }
 
   return (
@@ -40,7 +41,7 @@ export default function Country({ match }) {
             />
           )}
           Back
-      </LinkBtn>
+        </LinkBtn>
       </div>
       <CountryData country={data[0]} />
       <Borders borders={data[0].borders} />
