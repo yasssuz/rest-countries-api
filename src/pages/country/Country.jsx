@@ -5,7 +5,7 @@ import { Borders } from "../../components/country/_Borders"
 
 export default function Country({ match }) {
   const countryName = match.params.id
-  const { isLoading, data, isError } = GetCountry(countryName)
+  const { isLoading, data, isError, isFetching } = GetCountry(countryName)
 
   if (isLoading) {
     return <h1>loading...</h1>
@@ -13,6 +13,10 @@ export default function Country({ match }) {
 
   if (isError) {
     return <h1>Error</h1>
+  }
+
+  if (isFetching) {
+    return <h1>Fetching</h1>
   }
 
   return (
