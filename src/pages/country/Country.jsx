@@ -4,7 +4,7 @@ import { GetCountry } from "../../services/getCountry"
 import { Borders } from "../../components/country/_Borders"
 import { useContext } from "react"
 import { ThemeContext } from "../../contexts/ThemeContext"
-import { CountrySkeleton } from "../../skeletons/_CountrySkeleton"
+import { CountrySkeleton } from "../../components/skeletons/_CountrySkeleton"
 
 export default function Country({ match }) {
   const { darkTheme } = useContext(ThemeContext)
