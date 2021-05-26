@@ -17,7 +17,7 @@ module.exports = {
       },
 
       skeleton: {
-        transparentDark: '#0000004c'
+        transparentDark: '#0000002c'
       }
     },
     extend: {},
