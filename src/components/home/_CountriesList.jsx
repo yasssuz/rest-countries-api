@@ -1,18 +1,21 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { GetCountries } from '../../services/getCountries'
-
-import { CountriesEskeleton } from './_CountriesEskeleton'
+import { CountriesSkeleton } from '../skeletons/_CountriesSkeleton'
 
 export function CountriesList() {
-  const { isLoading, isError, data } = GetCountries()
+  const { isLoading, isError, data, isFetching } = GetCountries()
 
   if (isLoading) {
-    return <CountriesEskeleton />
+    return <CountriesSkeleton />
+  }
+
+  if (isFetching) {
+    return <CountriesSkeleton />
   }
 
   if (isError) {
-    return <span>Error</span>
+    return <CountriesSkeleton />
   }
 
   return (
