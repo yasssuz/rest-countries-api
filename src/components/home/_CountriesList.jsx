@@ -20,7 +20,7 @@ export function CountriesList() {
 
   return (
     <section>
-      <List className="grid gap-y-10 md:gap-x-10 mt-8">
+      <List className="grid gap-y-10 md:gap-x-10 mt-8 lg:flex lg:justify-center lg:align-center lg:flex-wrap lg:gap-x-0">
         {data.map(country => (
           <Item
             key={country.name}
@@ -30,7 +30,7 @@ export function CountriesList() {
               <img
                 src={country.flag}
                 alt={country.name}
-                className="w-full h-52 object-cover md:h-56"
+                className="w-full h-52 object-cover md:h-56 lg:h-44"
               />
               <div className="p-6 dark:text-white text-darkest flex flex-col justify-center">
                 <h2 className="dark:text-white text-lg font-extrabold mb-2">{country.name}</h2>
@@ -66,6 +66,11 @@ const Item = styled.li`
 
   @media screen and (min-width: 768px) {
     max-width: none;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 260px;
+    height: 340px;
   }
 `
 
