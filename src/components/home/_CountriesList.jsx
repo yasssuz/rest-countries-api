@@ -20,7 +20,7 @@ export function CountriesList() {
 
   return (
     <section>
-      <List className="grid gap-y-10 md:gap-x-10 mt-8 lg:flex lg:justify-center lg:align-center lg:flex-wrap lg:gap-x-0">
+      <List className="grid gap-y-10 md:gap-x-10 mt-8 lg:flex lg:justify-center lg:align-center lg:flex-wrap lg:gap-x-4">
         {data.map(country => (
           <Item
             key={country.name}
