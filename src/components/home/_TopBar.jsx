@@ -14,6 +14,7 @@ export function TopBar() {
         defaultValue="Filter by Region"
         className="h-12 md:w-72 w-52 cursor-pointer text-darkest dark:text-white dark:bg-gray-light rounded-md text-base px-6"
       >
+        <option className="text-sm" value="all">All</option>
         <option className="text-sm" value="africa">Africa</option>
         <option className="text-sm" value="america">America</option>
         <option className="text-sm" value="asia">Asia</option>
