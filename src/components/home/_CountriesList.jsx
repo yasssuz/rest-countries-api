@@ -1,10 +1,19 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { GetCountries } from '../../services/getCountries'
 import { CountriesSkeleton } from '../skeletons/_CountriesSkeleton'
+import { useQuery } from 'react-query'
 
 export function CountriesList() {
-  const { isLoading, isError, data, isFetching } = GetCountries()
+  const { isLoading, isError, data, isFetching } = getCountries()
+
+  function getCountries() {
+    return useQuery('countries', async () => {
+      const res = await fetch(`https://restcountries.eu/rest/v2/all`)
+      const data = await res.json()
+
+      return data
+    })
+  }
 
   if (isLoading) {
     return <CountriesSkeleton />
