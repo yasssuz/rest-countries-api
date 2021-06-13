@@ -4,26 +4,26 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import styled, { keyframes } from 'styled-components'
 
 export function CountrySkeleton() {
-  const { darkTheme } = useContext(ThemeContext);
+  const { lightTheme } = useContext(ThemeContext);
 
   return (
     <div className="py-10 px-7 md:py-14 md:px-12 lg:p-20">
       <LinkBtn link="/">
-        {darkTheme ? (
-          <img
-            src="/assets/white-arrow-left.svg"
-            alt="go back"
-            className="mr-2"
-          />
-        ) : (
+        {lightTheme ? (
           <img
             src="/assets/black-arrow-left.svg"
             alt="go back"
             className="mr-2"
           />
+        ) : (
+          <img
+            src="/assets/white-arrow-left.svg"
+            alt="go back"
+            className="mr-2"
+          />
         )}
-          Back
-        </LinkBtn>
+        Back
+      </LinkBtn>
       <div className="mt-16">
         <Flag className="h-64 bg-skeleton-transparentLight dark:bg-skeleton-transparentDark rounded-md mb-11 mx-auto" />
         <Retangle className="mb-4 w-60 h-8 bg-skeleton-transparentLight dark:bg-skeleton-transparentDark rounded-sm" />
