@@ -3,11 +3,12 @@ import styled from 'styled-components'
 import { ThemeContext } from '../../contexts/ThemeContext'
 
 export function Header() {
-  const { darkTheme, setDarkTheme } = useContext(ThemeContext)
+  const { lightTheme, storeTheme, handleTheme } = useContext(ThemeContext)
 
   function toggleMode() {
     document.querySelector('html').classList.toggle('dark')
-    setDarkTheme(prevState => !prevState)
+    handleTheme()
+    storeTheme(lightTheme ? 'dark' : 'light')
   }
 
   return (
@@ -17,10 +18,10 @@ export function Header() {
         className="text-darkest flex items-center dark:text-white"
         onClick={toggleMode}
       >
-        {darkTheme ? (
-          <img src="/assets/moon.svg" alt="moon" className="mr-3" />
-        ) : (
+        {lightTheme ? (
           <img src="/assets/empty-moon.svg" alt="moon" className="mr-3" />
+        ) : (
+          <img src="/assets/moon.svg" alt="moon" className="mr-3" />
         )}
         Dark Mode
       </button>
